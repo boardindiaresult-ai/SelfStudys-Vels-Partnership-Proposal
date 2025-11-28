@@ -38,12 +38,3 @@ git remote set-url origin https://<TOKEN>@github.com/boardindiaresult-ai/SelfStu
 ```
 
 Rotate the PAT after use or inject it via a credential helper/`GIT_ASKPASS` script to avoid persisting the secret in your shell history.
-
-## Deploying to GitHub Pages
-
-An automated workflow builds the site with Vite (compiling the TypeScript/JSX to browser-ready JavaScript) and deploys the contents of `dist/` to GitHub Pages. To publish:
-
-1. In the GitHub repository, enable **Pages** with the "GitHub Actions" source.
-2. Push to `main`. The workflow at `.github/workflows/deploy.yml` will install dependencies, run `npm run build`, and deploy the built assets.
-
-This ensures Pages serves compiled JavaScript instead of raw `.tsx` files, preventing MIME-type errors such as `Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "application/octet-stream"`.
